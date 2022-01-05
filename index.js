@@ -1,4 +1,4 @@
-import GroupListComponent from './src/components/calllist.js'
+import CallListComponent from './src/components/calllist.js'
 import { ROUTE_NAMES as NAMES, ADMIN_GROUP } from './src/consts.js'
 import { CALL_FORM_CONFIG } from './src/formconfig.js'
 
@@ -9,7 +9,7 @@ export function createMenu (user) {
 }
 
 export async function setupRoutes (routes, path, cfg, initConfig) {
-  const groupsCfg = Object.assign(cfg, { 
+  const callsCfg = Object.assign(cfg, { 
     conf: CALL_FORM_CONFIG,
     default_sort: 'created:asc',
     // getLoadUrl: (itemId, self) => {
@@ -23,10 +23,10 @@ export async function setupRoutes (routes, path, cfg, initConfig) {
 
   routes.push({
     path, 
-    name: NAMES.grouplist, 
-    component: GroupListComponent, 
+    name: NAMES.calllist, 
+    component: CallListComponent, 
     props: route => {
-      return { query: route.query, cfg: groupsCfg }
+      return { query: route.query, cfg: callsCfg }
     }
   })
 
