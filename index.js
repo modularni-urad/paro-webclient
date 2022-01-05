@@ -19,7 +19,7 @@ export async function setupRoutes (routes, path, cfg, initConfig) {
     //   return `${self.cfg.url}?filter=${JSON.stringify(filter)}`
     // },
   })
-  await initConfig(groupsCfg)
+  await initConfig(callsCfg)
 
   routes.push({
     path, 
